@@ -3,6 +3,7 @@ defmodule HelloWeb.UserSocket do
 
   ## Channels
   # channel "room:*", HelloWeb.RoomChannel
+  channel "chat_room:lobby", HelloWeb.ChatRoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
