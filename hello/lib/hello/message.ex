@@ -7,8 +7,6 @@ defmodule Hello.Message do
   schema "messages" do
     field :message, :string
     field :name, :string
-
-    timestamps()
   end
 
   @doc false

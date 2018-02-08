@@ -54,5 +54,5 @@ config :hello, Hello.Repo,
   username: "root",
   password: "123456",
   database: "hello_dev",
-  hostname: "192.168.0.15",
+  hostname: "127.0.0.1",
   pool_size: 10

@@ -6,8 +6,6 @@ defmodule Hello.Repo.Migrations.CreateUsers do
       add :nick, :string
       add :account, :string
       add :passwd, :string
-
-      timestamps()
     end
 
   end

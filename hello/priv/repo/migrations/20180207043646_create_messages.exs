@@ -5,8 +5,6 @@ defmodule Hello.Repo.Migrations.CreateMessages do
     create table(:messages) do
       add :name, :string
       add :message, :string
-
-      timestamps()
     end
 
   end
