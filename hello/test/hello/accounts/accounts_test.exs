@@ -20,20 +20,30 @@ defmodule Hello.AccountsTest do
     end
 
     test "list_users/0 returns all users" do
-      user = user_fixture()
-      assert Accounts.list_users() == [user]
+      u1 = user_fixture()
+      [u2] = Accounts.list_users()
+      assert u1.account == u2.account
+      {:ok, user} = Accounts.auth_user(@valid_attrs.account, @valid_attrs.passwd)
+      assert user.nick == u2.nick
+      assert user.account == u2.account
+      assert user.id == u1.id
     end
 
     test "get_user!/1 returns the user with given id" do
-      user = user_fixture()
-      assert Accounts.get_user!(user.id) == user
+      u1 = user_fixture()
+      u2 = Accounts.get_user!(u1.id)
+      assert u1.account == u2.account
+      {:ok, user} = Accounts.auth_user(@valid_attrs.account, @valid_attrs.passwd)
+      assert user.nick == u2.nick
+      assert user.account == u2.account
+      assert user.id == u1.id
     end
 
     test "create_user/1 with valid data creates a user" do
       assert {:ok, %User{} = user} = Accounts.create_user(@valid_attrs)
       assert user.account == "some account"
       assert user.nick == "some nick"
-      assert user.passwd == "some passwd"
+      assert {:ok, _} = Accounts.auth_user(@valid_attrs.account, @valid_attrs.passwd)
     end
 
     test "create_user/1 with invalid data returns error changeset" do
@@ -46,7 +56,7 @@ defmodule Hello.AccountsTest do
       assert %User{} = user
       assert user.account == "some updated account"
       assert user.nick == "some updated nick"
-      assert user.passwd == "some updated passwd"
+      assert {:ok, _} = Accounts.auth_user(@update_attrs.account, @update_attrs.passwd)
     end
 
     test "update_user/2 with invalid data returns error changeset" do
