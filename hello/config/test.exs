@@ -17,3 +17,5 @@ config :hello, Hello.Repo,
   database: "hello_test",
   hostname: "127.0.0.1",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :pbkdf2_elixir, rounds: 1

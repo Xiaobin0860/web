@@ -13,6 +13,14 @@ defmodule HelloWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug Hello.Accounts.Pipeline
+  end
+
+  pipeline :ensure_auth do
+    plug Guardian.Plug.EnsureAuthenticated
+  end
+
   scope "/", HelloWeb do
     pipe_through :browser # Use the default browser stack
 
@@ -23,8 +31,16 @@ defmodule HelloWeb.Router do
     get "/chat", ChatController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", HelloWeb do
-  #   pipe_through :api
-  # end
+  scope "/pm", HelloWeb do
+    pipe_through [:browser, :auth]
+
+    get "/", PmController, :index
+    post "/", PmController, :login
+    post "/logout", PmController, :logout
+  end
+  scope "/pm", HelloWeb do
+    pipe_through [:browser, :auth, :ensure_auth]
+
+    get "/secret", PmController, :secret
+  end
 end

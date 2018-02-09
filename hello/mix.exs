@@ -40,6 +40,9 @@ defmodule Hello.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
+      {:comeonin, "~> 4.0"},
+      {:pbkdf2_elixir, "~> 0.12"},
+      {:guardian, "~> 1.0"},
       {:cowboy, "~> 1.0"}
     ]
   end

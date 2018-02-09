@@ -56,3 +56,7 @@ config :hello, Hello.Repo,
   database: "hello_dev",
   hostname: "127.0.0.1",
   pool_size: 10
+
+config :hello, Hello.Accounts.Guardian,
+  secret_key: "gxeYT33lhtALklTwjGx9wt47dfUEGbTAtc7m4d7DD64SNMqQROTH3SkqUx50dH99"
+  

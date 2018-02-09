@@ -7,6 +7,16 @@ defmodule Hello.Accounts do
   alias Hello.Repo
 
   alias Hello.Accounts.User
+  alias Comeonin.Pbkdf2
+
+  require Logger
+
+  def auth_user(account, plain_text_passwd) do
+    query = from(u in User, where: u.account == ^account)
+
+    Repo.one(query)
+    |> check_pass(plain_text_passwd)
+  end
 
   @doc """
   Returns the list of users.
@@ -100,5 +110,15 @@ defmodule Hello.Accounts do
   """
   def change_user(%User{} = user) do
     User.changeset(user, %{})
+  end
+
+  defp check_pass(nil, _), do: {:error, "Incorrect account or password"}
+
+  defp check_pass(user, plain_text_passwd) do
+    Logger.debug("check_pass for [#{user.nick}], account=[#{user.account}], pass=[#{plain_text_passwd}], hash=[#{user.passwd}]")
+    case Pbkdf2.checkpw(plain_text_passwd, user.passwd) do
+      true -> {:ok, user}
+      false -> {:error, "Incorrect account or password"}
+    end
   end
 end
