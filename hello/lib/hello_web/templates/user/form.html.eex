@@ -18,9 +18,8 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :passwd, class: "control-label" %>
-    <%= text_input f, :passwd, class: "form-control" %>
-    <%= error_tag f, :passwd %>
+    <label class="control-label" for="user_passwd">Passwd</label>
+    <input class="form-control" id="user_passwd" name="user[passwd]" type="text">
   </div>
 
   <div class="form-group">

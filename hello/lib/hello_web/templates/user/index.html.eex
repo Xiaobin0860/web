@@ -5,7 +5,6 @@
     <tr>
       <th>Nick</th>
       <th>Account</th>
-      <th>Passwd</th>
 
       <th></th>
     </tr>
@@ -15,7 +14,6 @@
     <tr>
       <td><%= user.nick %></td>
       <td><%= user.account %></td>
-      <td><%= user.passwd %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
