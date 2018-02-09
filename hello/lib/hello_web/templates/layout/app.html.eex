@@ -16,6 +16,7 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
+            <li><%= link "聊天", to: chat_path(@conn, :index) %></li>
             <li><%= link "管理", to: pm_path(@conn, :index) %></li>
             <li><%= link "用户", to: user_path(@conn, :index) %></li>
             <li><%= link "首页", to: page_path(@conn, :index) %></li>
