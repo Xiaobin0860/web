@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Clock from './Clock';
 
 class Hello extends Component {
@@ -10,6 +11,10 @@ class Hello extends Component {
       </div>
     );
   }
+}
+
+Hello.propTypes = {
+  name: PropTypes.string
 }
 
 export default Hello;

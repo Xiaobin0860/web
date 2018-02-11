@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FocusText from './FocusText';
 
 class CheckList extends Component {
@@ -18,6 +19,10 @@ class CheckList extends Component {
       </div>
     );
   }
+}
+
+CheckList.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default CheckList;
