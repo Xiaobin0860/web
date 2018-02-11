@@ -6,6 +6,7 @@ class List extends Component {
     var cards = this.props.cards.map((card) => <Card key={card.id}
       title={card.title}
       description={card.description}
+      color={card.color}
       tasks={card.tasks} />
     );
     return (
