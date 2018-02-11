@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FocusText from './FocusText';
 
 class CheckList extends Component {
   render() {
@@ -13,6 +14,7 @@ class CheckList extends Component {
       <div className="checklist">
         <ul>{tasks}</ul>
         <input type="text" className="checklist--add-task" placeholder="Type then hit Enter to add a task" />
+        <FocusText />
       </div>
     );
   }
