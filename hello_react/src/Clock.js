@@ -36,14 +36,7 @@ class Clock extends Component {
         1000
       );
     }
-    //why
-    console.log('before isToggleOn=' + this.state.isToggleOn)
     this.setState({ isToggleOn: !this.state.isToggleOn });
-    // this.setState(pre => { isToggleOn: !pre.isToggleOn });
-    // this.setState(pre => ({
-    //   isToggleOn: !pre.isToggleOn
-    // }));
-    console.log('after isToggleOn=' + this.state.isToggleOn)
   }
 
   render() {

@@ -2,14 +2,35 @@ import React, { Component } from 'react';
 import CheckList from './CheckList'
 
 class Card extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showDetails: false
+    };
+  }
+
+  toggleDetails() {
+    this.setState({ showDetails: !this.state.showDetails });
+  }
+
   render() {
-    return (
-      <div className="card">
-        <div className="card__title">{this.props.title}</div>
+    let cardDetails;
+    if (this.state.showDetails) {
+      cardDetails = (
         <div className="card__details">
           {this.props.description}
           <CheckList cardId={this.props.id} tasks={this.props.tasks} />
         </div>
+      );
+    }
+    return (
+      <div className="card">
+        <div className={
+          this.state.showDetails ? "card__title card__title--is-open" : "card__title"
+        } onClick={
+          () => this.toggleDetails()
+        }>{this.props.title}</div>
+        {cardDetails}
       </div>
     );
   }
