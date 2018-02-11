@@ -16,7 +16,7 @@ let cardList = [
   {
     id: 2,
     title: "Write some code",
-    description: "Code alone with the samples in the book",
+    description: "Code alone with the samples in the book. [github](https://github.com/Xiaobin0860/web)",
     status: "todo",
     tasks: [
       {
