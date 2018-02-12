@@ -5,6 +5,7 @@ import Hello from './Hello'
 import FoodList from './FoodList'
 import BoardContainer from './Board/BoardContainer'
 import ContactsContainer from './Contacts/ContactsContainer'
+import AnimatedShoppingList from './Shop/ShoppingList'
 
 class App extends Component {
   render() {
@@ -15,9 +16,14 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Hello name="React" />
+        <br />
         <FoodList />
+        <br />
         <BoardContainer />
+        <br />
         <ContactsContainer />
+        <br />
+        <AnimatedShoppingList />
       </div>
     );
   }
