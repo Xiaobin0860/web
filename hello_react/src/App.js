@@ -4,7 +4,7 @@ import './App.css';
 import Hello from './Hello'
 import FoodList from './FoodList'
 import Board from './Board'
-import Contacts from './Contacts/Contacts'
+import ContactsContainer from './Contacts/ContactsContainer'
 
 let cardList = [
   {
@@ -59,15 +59,6 @@ let cardList = [
   }
 ];
 
-let contacts = [
-  { name: "Cassio Zen", email: "cassiozen@gmail.com" },
-  { name: "Dan Abramov", email: "gaearon@somewhere.com" },
-  { name: "Pete Hunt", email: "pete@gmail.com" },
-  { name: "Paul", email: "paul@gmail.com" },
-  { name: "Ryan", email: "ryan@gmail.com" },
-  { name: "Xiaobin", email: "xiaobin0860@gmail.com" },
-];
-
 class App extends Component {
   render() {
     return (
@@ -79,7 +70,7 @@ class App extends Component {
         <Hello name="React" />
         <FoodList />
         <Board cards={cardList} />
-        <Contacts contacts={contacts} />
+        <ContactsContainer />
       </div>
     );
   }

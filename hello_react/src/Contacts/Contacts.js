@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import ContactList from './ContactList';
+import 'whatwg-fetch'
 
 class Contacts extends Component {
   constructor() {
