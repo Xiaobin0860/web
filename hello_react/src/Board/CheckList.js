@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FocusText from './FocusText';
+import FocusText from '../FocusText';
 
 class CheckList extends Component {
   render() {
