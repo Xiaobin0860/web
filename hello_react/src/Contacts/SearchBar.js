@@ -10,7 +10,7 @@ class SearchBar extends Component {
     return <input type="search"
       placeholder="search"
       value={this.props.filterText}
-      onChange={this.handleChange.bind(this)} />
+      onChange={(e) => this.handleChange(e)} />
   }
 }
 

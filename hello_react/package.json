@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "marked": "^0.3.12",
     "react": "^16.2.0",
+    "react-addons-update": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
     "whatwg-fetch": "^2.0.3"

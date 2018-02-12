@@ -116,7 +116,7 @@ ul {
 .checklist__task--remove:after {
   display: inline-block;
   color: #d66;
-  content: '+';
+  content: '-';
 }
 
 .checklist--add-task {

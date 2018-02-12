@@ -18,7 +18,7 @@ class Contacts extends Component {
   render() {
     return (
       <div>
-        <SearchBar filterText={this.state.filterText} onUserInput={this.handleInput.bind(this)} />
+        <SearchBar filterText={this.state.filterText} onUserInput={(term) => this.handleInput(term)} />
         <ContactList contacts={this.props.contacts} filterText={this.state.filterText} />
       </div>
     )
