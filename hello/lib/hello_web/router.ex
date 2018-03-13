@@ -31,6 +31,12 @@ defmodule HelloWeb.Router do
     get "/chat", ChatController, :index
   end
 
+  scope "/react", HelloWeb do
+    pipe_through :browser
+
+    get "/*path", ReactController, :index
+  end
+
   scope "/pm", HelloWeb do
     pipe_through [:browser, :auth]
 
