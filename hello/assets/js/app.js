@@ -50,3 +50,9 @@ channel
     .receive('error', resp => {
         console.log('Unable to join', resp);
     });
+
+import React from "react"
+import ReactDOM from "react-dom"
+import HelloReact from "./components/HelloReact"
+
+ReactDOM.render(<HelloReact />, document.getElementById("react"));

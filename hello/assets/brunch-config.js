@@ -2,7 +2,10 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      joinTo: {
+        "js/app.js": /^js/,
+        "js/vendor.js": /^(?!js)/
+      }
 
       // To use a separate vendor.js bundle, specify two files path
       // http://brunch.io/docs/config#-files-
@@ -45,6 +48,7 @@ exports.config = {
   // Configure your plugins
   plugins: {
     babel: {
+      presets: ['latest', 'react'],
       // Do not use ES6 compiler in vendor code
       ignore: [/vendor/]
     }
