@@ -2,6 +2,7 @@
   "name": "hello_react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://localhost:4001/react",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "marked": "^0.3.12",
