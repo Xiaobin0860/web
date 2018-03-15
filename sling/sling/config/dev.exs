@@ -56,3 +56,7 @@ config :sling, Sling.Repo,
   database: "sling_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :sling, Sling.Auth.Guardian,
+  issuer: "Sling",
+  secret_key: "EQ3OG3trheghQ/HVcD1VfHks9MkPUYXGTdcDJ60riKwZSkrN4k+3cnOqfHXyuYIm"

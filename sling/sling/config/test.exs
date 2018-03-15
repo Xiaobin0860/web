@@ -17,3 +17,5 @@ config :sling, Sling.Repo,
   database: "sling_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :pbkdf2_elixir, rounds: 1
