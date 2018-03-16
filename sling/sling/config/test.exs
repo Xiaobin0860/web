@@ -18,4 +18,8 @@ config :sling, Sling.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
+config :sling, Sling.Auth.Guardian,
+  issuer: "Sling",
+  secret_key: "EQ3OG3trheghQ/HVcD1VfHks9MkPUYXGTdcDJ60riKwZSkrN4k+3cnOqfHXyuYIm"
+  
 config :pbkdf2_elixir, rounds: 1

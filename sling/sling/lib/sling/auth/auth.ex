@@ -36,6 +36,8 @@ defmodule Sling.Auth do
 
   """
   def get_user!(id), do: Repo.get!(User, id)
+  def get_user(id), do: Repo.get(User, id)
+  def get_user_by_email(email), do: Repo.get_by(User, email: email)
 
   @doc """
   Creates a user.
@@ -102,18 +104,19 @@ defmodule Sling.Auth do
     User.changeset(user, %{})
   end
 
+  def auth_user(email, _) when is_nil(email), do: {:error, "Empty email"}
   def auth_user(email, plain_text_passwd) do
-      query = from(u in User, where: u.email == ^email)
-  
-      Repo.one(query)
-      |> check_pass(plain_text_passwd)
-    end
+    query = from(u in User, where: u.email == ^email)
+
+    Repo.one(query)
+    |> check_pass(plain_text_passwd)
+  end
     
-    defp check_pass(nil, _), do: {:error, "Incorrect account or password"}
-    defp check_pass(user, plain_text_passwd) do
-      case Pbkdf2.checkpw(plain_text_passwd, user.pass) do
-        true -> {:ok, user}
-        false -> {:error, "Incorrect account or password"}
-      end
+  defp check_pass(user, _) when is_nil(user), do: {:error, "Incorrect email or pass"}
+  defp check_pass(user, plain_text_passwd) do
+    case Pbkdf2.checkpw(plain_text_passwd, user.pass) do
+      true -> {:ok, user}
+      false -> {:error, "Incorrect email or pass"}
     end
+  end
 end
