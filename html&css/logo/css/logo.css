@@ -26,7 +26,8 @@ div {
 .d_shield3,
 .d_shield4,
 .d_shield5,
-.d_shield6 {
+.d_shield6,
+.d_shield7 {
   background: #e15016;
 }
 .d_shield1 {
@@ -65,9 +66,16 @@ div {
   width: 140px;
   height: 100px;
 }
+.d_shield7 {
+  height: 20px;
+  top: 199px;
+  width: 80px;
+  left: 60px;
+}
 .l_shield1,
 .l_shield2,
-.l_shield3 {
+.l_shield3,
+.l_shield4 {
   background: #ee6812;
 }
 .l_shield1 {
@@ -87,4 +95,74 @@ div {
   left: 172px;
   width: 140px;
   height: 100px;
+}
+.l_shield4 {
+  height: 43px;
+  top: 113px;
+  width: 100px;
+  left: 180px;
+}
+.gray1,
+.gray2,
+.gray3,
+.gray4 {
+  background: #ebebeb;
+}
+.gray1 {
+  height: 43px;
+  width: 102px;
+  left: 70px;
+  top: 70px;
+}
+.gray2 {
+  height: 216px;
+  width: 46px;
+  left: 75px;
+  top: 70px;
+  transform: skewX(5deg);
+}
+.gray3 {
+  height: 43px;
+  width: 95px;
+  left: 77px;
+  top: 156px;
+}
+.gray4 {
+  height: 47px;
+  width: 87px;
+  left: 85px;
+  top: 251px;
+  transform: skewY(15deg);
+}
+.white1,
+.white2,
+.white3,
+.white4 {
+  background: #fff;
+}
+.white1 {
+  height: 43px;
+  width: 102px;
+  left: 172px;
+  top: 70px;
+}
+.white2 {
+  height: 216px;
+  width: 46px;
+  left: 223px;
+  top: 70px;
+  transform: skewX(-5deg);
+}
+.white3 {
+  height: 43px;
+  width: 95px;
+  left: 172px;
+  top: 156px;
+}
+.white4 {
+  height: 47px;
+  width: 87px;
+  left: 172px;
+  top: 251px;
+  transform: skewY(-15deg);
 }
