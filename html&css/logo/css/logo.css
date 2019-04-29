@@ -65,3 +65,26 @@ div {
   width: 140px;
   height: 100px;
 }
+.l_shield1,
+.l_shield2,
+.l_shield3 {
+  background: #ee6812;
+}
+.l_shield1 {
+  left: 172px;
+  width: 140px;
+  height: 346px;
+}
+.l_shield2 {
+  transform: skewX(-5deg);
+  left: 227px;
+  width: 100px;
+  height: 346px;
+}
+.l_shield3 {
+  transform: skewY(-15deg);
+  top: 265px;
+  left: 172px;
+  width: 140px;
+  height: 100px;
+}
