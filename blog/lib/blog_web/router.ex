@@ -17,10 +17,13 @@ defmodule BlogWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", BlogWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", BlogWeb do
+    pipe_through :api
+
+    resources "/jsons", JsonController, except: [:new, :edit]
+  end
 end
